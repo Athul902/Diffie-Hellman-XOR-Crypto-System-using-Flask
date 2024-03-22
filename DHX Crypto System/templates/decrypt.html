@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypted Plaintext (ASCII)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #555;
+            border-radius: 4px;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Decrypted Plaintext</h1>
+
+        {% if plaintext_ascii %}
+        <div class="result">
+            <p>{{ plaintext_ascii }}</p>
+        </div>
+        {% else %}
+        <div class="result">
+            <p>No plaintext available.</p>
+        </div>
+        {% endif %}
+
+        <div class="button-container">
+            <!-- Home Button -->
+            <button class="button" onclick="goHome()">Home</button>
+            
+            <!-- Back Button -->
+            <button class="button" onclick="goBack()">Back</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Function to Go Back -->
+    <script>
+        function goHome() {
+            window.location.href = "/";
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
